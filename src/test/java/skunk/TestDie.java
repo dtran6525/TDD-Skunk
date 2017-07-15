@@ -1,5 +1,7 @@
 package test.java.skunk;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import main.java.skunk.Die;
@@ -9,7 +11,7 @@ public class TestDie {
 	public void testCreateDie() {
 		int maxValue = 6;
 		Die d1 = new Die(maxValue);
-		assert(d1.getMaxValue() == maxValue);
+		assertTrue(d1.getMaxValue() == maxValue);
 	}
 	
 	@Test
@@ -17,7 +19,7 @@ public class TestDie {
 		int maxValue = 2;
 		Die d1 = new Die(maxValue);
 		for (int i = 0; i < 1000; i++) {
-			assert(d1.roll() <= 2);
+			assertTrue(d1.roll() <= 2);
 		}
 	}
 	
