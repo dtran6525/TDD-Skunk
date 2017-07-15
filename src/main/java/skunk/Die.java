@@ -1,5 +1,7 @@
 package main.java.skunk;
 
+import java.util.Random;
+
 public class Die {
 	
 	private int maxValue;
@@ -14,6 +16,11 @@ public class Die {
 
 	public void setMaxValue(int maxValue) {
 		this.maxValue = maxValue;
+	}
+
+	public int roll() {
+		Random r = new Random();
+		return r.nextInt(maxValue+1);
 	}
 
 }	
