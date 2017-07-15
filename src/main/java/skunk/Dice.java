@@ -2,6 +2,7 @@ package main.java.skunk;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Dice {
 	
@@ -21,6 +22,11 @@ public class Dice {
 
 	public void setDieList(List<Die> dieList) {
 		this.dieList = dieList;
+	}
+
+	public int roll() {
+		int result = dieList.stream().collect(Collectors.summingInt(Die::roll));
+		return result;
 	}
 
 
